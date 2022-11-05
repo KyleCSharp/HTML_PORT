@@ -1,0 +1,54 @@
+p
+{
+    font-size: xx-large;
+}
+#myVideo 
+{
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+  }
+  .content 
+  {
+    position: relative;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    color: #f1f1f1;
+    width: 100%;
+    padding: 20px;
+  }
+  
+  #myBtn:hover 
+  {
+    position: relative;
+  background: #ddd;
+  color: black;
+}
+#KyleRigler
+{
+position: relative;
+max-height: 500px;
+max-width: 500px;
+border-radius: 50%;
+}
+body
+{
+color: white;
+font-size: xx-large;
+}
+#myBtn 
+{
+  width: 200px;
+  font-size: 18px;
+  padding: 10px;
+  border: none;
+  background: #000;
+  color: #fff;
+  cursor: pointer;
+}
