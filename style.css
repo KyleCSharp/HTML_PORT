@@ -39,6 +39,7 @@ border-radius: 50%;
 }
 body
 {
+  text-align: center;
 color: white;
 font-size: xx-large;
 }
