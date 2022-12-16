@@ -87,6 +87,8 @@ body
   scroll-snap-stop: 2;
 }
 
+
+
 @media (max-width: 800px) 
 {
  html{ font-size: 15px;}
