@@ -21,16 +21,7 @@ html
     bottom: 0;
     z-index: -1;
   }
- /*  .aboutme 
-  {
-   justify-self: center;
-    
-    
-    color: #f1f1f1;
-    width: 97vw;
-    padding: 20px;
-    
-  } */
+ 
   #school 
   {
     width: 100vw;
@@ -47,8 +38,8 @@ padding: 20px;
 #KyleRigler
 {
 position: relative;
-max-height: 300px;
-max-width: 300px;
+max-height: 800px;
+max-width: 800px;
 border-radius: 50%;
 }
 body
