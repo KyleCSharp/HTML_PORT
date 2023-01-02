@@ -39,8 +39,8 @@ html
 #KyleRigler
 {
   position: relative;
-  max-height: 100%;
-  max-width: 100%;
+  max-height: 25%;
+  max-width: 25%;
   border-radius: 50%;
 }
 body
