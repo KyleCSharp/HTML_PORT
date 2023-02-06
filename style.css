@@ -119,5 +119,16 @@ body
   font-size: large;
 } 
 }
+@keyframes example 
+{
+  from {transform: scale(-1)}
+  to {transform: scale(1)}
+  
+}
 
+
+#KyleRigler{
+  animation-name: example;
+  animation-duration: 2s;
+}
 
