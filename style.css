@@ -132,4 +132,8 @@ body
   animation-name: zoom;
   animation-duration: 2s;
 }
+.Title
+{
+ color-scheme: black;
+}
 
