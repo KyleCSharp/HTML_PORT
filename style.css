@@ -93,9 +93,13 @@ body
 }
 #carwash
 {
+
  max-width: 600px;
 }
-
+@media(max-width:1200px)
+{
+  #carwash {max-width: 175px;}
+}
 
 
 @media (max-width: 800px) 
