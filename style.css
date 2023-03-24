@@ -2,11 +2,19 @@
 {
   box-sizing:border-box;
 }
-
+.projects
+{
+background-color: rgb(65, 63, 63);
+}
 
 html
 {
   font-size: 30px;
+}
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+  overflow-y: show;
 }   
 
 #myVideo 
@@ -39,7 +47,7 @@ html
   position: relative;
   max-height: 25%;
   max-width: 25%;
-  border-radius: 50%;
+  border-radius: 301px;
 }
 body
 {
@@ -83,7 +91,7 @@ body
   flex:1;
   text-align: center;
   max-width: 50vw;
-
+  margin-right: 10px;
   
 }
 .ProjectsRight
@@ -91,17 +99,24 @@ body
   flex:1;
   text-align: center;
   max-width: 50vw;
+  margin-left: 10px;
 }
 #carwash
 {
-
  max-width: 600px;
+}
+#mvcflashcards
+{
+  max-width: 600px;
 }
 @media(max-width:1200px)
 {
   #carwash {max-width: 175px;}
 }
-
+@media(max-width:1200px)
+{
+  #mvcflashcards {max-width: 175px;}
+}
 
 @media (max-width: 800px) 
 {
