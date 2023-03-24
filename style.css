@@ -2,6 +2,7 @@
 {
   box-sizing:border-box;
 }
+
 .projects
 {
 background-color: rgb(65, 63, 63);
@@ -10,11 +11,13 @@ background-color: rgb(65, 63, 63);
 html
 {
   font-size: 30px;
+ 
 }
-html, body {
+html, body 
+{
   max-width: 100%;
   overflow-x: hidden;
-  overflow-y: show;
+  background-color: rgba(31, 15, 29, 0.5);
 }   
 
 #myVideo 
@@ -28,7 +31,9 @@ html, body {
     top: 0;
     bottom: 0;
     z-index: -1;
+  
   }
+  
  
   #school 
   {
