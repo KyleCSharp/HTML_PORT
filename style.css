@@ -53,6 +53,8 @@ html, body
   max-height: 25%;
   max-width: 25%;
   border-radius: 301px;
+  animation-name: zoom;
+  animation-duration: 4s;
 }
 body
 {
@@ -166,8 +168,7 @@ body
 
 #KyleRigler
 {
-  animation-name: zoom;
-  animation-duration: 2s;
+  
 }
 .Title
 {
