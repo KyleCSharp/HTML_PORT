@@ -5,7 +5,7 @@
 
 .projects
 {
-background-color: rgb(65, 63, 63);
+background-color: rgb(66, 44, 66);
 }
 
 html
@@ -15,6 +15,7 @@ html
 }
 html, body 
 {
+  
   max-width: 100%;
   overflow-x: hidden;
   background-color: rgba(31, 15, 29, 0.5);
@@ -33,10 +34,14 @@ html, body
     z-index: -1;
   
   }
-  .TIME_VIEWER
+  .iframe
   {
-    max-width: 5000px;
-    max-height: 5000px;
+    
+    
+    margin: 20px;
+    width: auto;
+    height: 800px;
+    overflow: hidden;
     
   }
   
@@ -163,6 +168,15 @@ body
   margin-bottom: 50px;
   
 } 
+}
+@media (max-width:800px)
+{
+  .iframe
+  {
+    height: auto;
+    width:auto;
+    resize: both;
+  }
 }
 @keyframes zoom 
 {
