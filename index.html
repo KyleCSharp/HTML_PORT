@@ -2,22 +2,46 @@
 <html lang="en">
 <head>
   <link rel="icon" href="favicon\ught-iron-house-letter-k-LET-K-2_1aad4e62-be85-4fe6-ad3b-7c9e298e6ac8_580x.ico" type="image/x-icon">
-  <div class ="navbar"><a href="#projects">Projects</a>
-    <a href="#contacts">Contacts</a></div>
-  <div class = Title> 
-    <h1>Kyle Rigler</h1>
-  </div>
+  
   
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    
     <title>Kyle Rigler</title>
-    
+    <script src="JS/script.js"></script>
 </head>
 <body>
-  
+ 
+  <div class="navbar">
+    <a href="#projects">Projects</a>
+    <a href="#" class="contact-button">Contact Me</a>
+    <a href="https://www.linkedin.com/in/kyle-rigler-57b410238/"target="_blank"rel="noopener noreferrer"><img src="Images\linkedin.png" ></a>
+    <a href="https://www.codewars.com/users/KyleSharp"target="_blank"rel="noopener noreferrer"><img src="Images\codewars_logo_icon_145389.png" ></a>
+    <a href="https://github.com/KyleCSharp"target="_blank"rel="noopener noreferrer"><img src="Images\png-transparent-github-social-media-computer-icons-logo-android-github-logo-computer-wallpaper-banner-thumbnail-removebg-preview.png"></a>
+    <a href="mailto:kylesofteng@gmail.com"><img src="Images\png-email-removebg-preview.png" ></a>
+    <a href="tel:8645169985" class="phone-number"><img src="Images\phone.png" ></a>
+  </div>
+
+  <!-- Popup Overlay and Content -->
+  <div class="popup-overlay" id="popupOverlay">
+    <div class="popup-content">
+      <span class="close-button" id="closeButton">&times;</span>
+      <h2>Contact Form</h2>
+      <!-- Your contact form elements go here -->
+      <form action="https://formsubmit.co/kylesofteng@gmail.com" method="POST">
+        <input type="email" name="email" placeholder="Email Address" required>
+                <input type="text" name="name"placeholder="Name" required>
+                <input type="text" name="number" placeholder="Number"required>
+                <textarea name="message" placeholder="Write message here" required></textarea>
+
+                <button type="submit">Send</button>
+   </form>
+    </div>
+  </div>
+  <div class = Title> 
+    <h1>Kyle Rigler</h1>
+  </div>
     <video autoplay muted loop id="myVideo">
         <source src=".\video\med vid.mp4" type="video/mp4">
       </video>
@@ -40,23 +64,7 @@
        <p id = "school">Birmingham. Alabama Project-based training in programming languages and other technical skills, such as SQL, C#, .NET Core, Java, Git, ASP.NET MVC, HTML, CSS, and JavaScript. These skills were developed by building multiple C# and SQL projects in Visual Studio and Visual Studio Code C# and SQL Projects were tracked in Git and GitHub for source control Managed SQL databases using the CRUD operations in MySQL</p>
        <a href="https://app.digit.ink/view-credential/f12ebdbc-7462-407e-be35-fbc29b90730d?di_ref=a2li"target="_blank"rel="noopener noreferrer">My Certificate</a>
        </section>
-       <div id="contacts"><p>CONTACTS & OTHER LINKS </p></div>
        
-        <div class="contacts">
-          <ul>
-            <div>Work cell : (864)-516-9985 </div> 
-            <div>EMAIL: <a href="mailto:Kylesofteng@gmail.com">Kylesofteng@gmail.com</a> </div>
-            <div><a href="https://www.linkedin.com/in/kyle-rigler-57b410238/"target="_blank"rel="noopener noreferrer">visit my linkedin</a></div>
-            <div></div><a href="https://www.codewars.com/users/KyleSharp"target="_blank"rel="noopener noreferrer">CODEWARS</a> 
-            <div><a href="https://github.com/KyleCSharp"target="_blank"rel="noopener noreferrer">My GitHub</a></div>
-            
-          </ul>
-
-        </div>
-      
-        
-        
-        
         <div class = "resume">
           MY RESUME
           <a href="https://docs.google.com/document/d/1SbY5K8QxEKCK9YVSXjj4UpoHSzYOrcbMwwoTjl4sXeU/edit?usp=sharing"target="_blank"rel="noopener noreferrer">click for resume</a>

@@ -1,77 +1,148 @@
-*
-{
-  box-sizing:border-box;
+* {
+  box-sizing: border-box;
 }
 
-.projects
-{
+.projects {
   background-color: rgb(66, 44, 66);
 }
-.navbar
-{
- background-color: rgb(66, 44, 66);
- text-align: center;
- height: 50px;
-  vertical-align:center;
-  line-height: 50px;
- 
+.navbar {
+  background-color: #333;
+  padding: 10px;
+  
+}
+.navbar a.contact-button {
+  color: white;
+  margin-right: 20px;
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.navbar a.contact-button:hover {
+  background-color: #555; /* Change the background color on hover */
+}
+.navbar a {
+  color: white;
+  margin-right: 20px;
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+.navbar a:hover {
+  background-color: #555; /* Change the background color on hover */
+}
+.navbar img {
+  width: 30px; /* Set the desired width for the image */
+  height: 30px; /* Set the desired height for the image */
+  margin-top: 5px; /* Add some right margin to create space between the image and the text */
+}
+/* Style for the popup */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  z-index: 999;
+  color: rgb(252, 252, 252);
+  animation: fadeInOut 0.5s ease; /* Use the fadeInOut animation for smooth effect */
+  opacity: 0;
+}
+.popup-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color:rgb(66, 44, 66);
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  cursor: pointer;
+}
+.popup-overlay.show-popup {
+  display: block;
+  opacity: 1;
 }
 
 
+.popup-overlay {
+  
+  transition: opacity 0.8s ease;
+  opacity: 0;
+}
 
-html
-{
+
+.message-container {
+  
+  margin-top: 10px;
+}
+
+
+textarea {
+  
+  width: 100%;
+  height: 150px;
+  
+}
+@keyframes fadeInOut {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+  
+}
+html {
   font-size: 30px;
   scroll-behavior: smooth;
 }
-html, body 
-{
-  
+html,
+body {
   max-width: 100%;
   overflow-x: hidden;
   background-color: rgba(31, 15, 29, 0.6);
- 
-}   
+}
 
-#myVideo 
-{
-    width: 100vw;
-    height: 100vh;
-    object-fit:cover;
-    position: fixed;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    z-index: -1;
-   
-  }
-  .iframe
-  {
-    
-    
-    margin: 20px;
-    width: auto;
-    height: 800px;
-    overflow: hidden;
-    
-  }
-  
- 
-  #school 
-  {
-    width: 100vw;
-    padding: 20px;
-  }
+#myVideo {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+}
+.iframe {
+  margin: 20px;
+  width: auto;
+  height: 800px;
+  overflow: hidden;
+}
 
-  #aboutMe 
-  {
-    width: 100vw;
-    padding: 20px;
-  }
-  
-#KyleRigler
-{
+#school {
+  width: 100vw;
+  padding: 20px;
+}
+
+#aboutMe {
+  width: 100vw;
+  padding: 20px;
+}
+
+#KyleRigler {
   position: relative;
   max-height: 25%;
   max-width: 25%;
@@ -79,128 +150,154 @@ html, body
   animation-name: zoom;
   animation-duration: 4s;
 }
-body
-{
+body {
   max-width: 100vw;
   text-align: center;
   color: rgb(255, 255, 255);
   margin: 0px;
 }
-.resume
-{
+.resume {
   position: fixed;
   top: 50px;
   left: 0;
   width: 250px;
   height: 120px;
-  border: 5px solid #ffffff; 
+  border: 5px solid #ffffff;
   margin-left: 10px;
 }
-.contacts
-{
-  text-align: center;
-  margin-left: -40PX;
-}
-.Certificate
-{
+
+
+.Certificate {
   position: fixed;
   top: 50px;
   right: 0;
   width: 250px;
   height: 120px;
-  border: 5px solid #ffffff; 
+  border: 5px solid #ffffff;
   margin-right: 10px;
   scroll-snap-align: end;
 }
-.projects
-{
+.projects {
   display: flex;
-  justify-content:space-around;
+  justify-content: space-around;
 }
-.ProjectsLeft
-{
-  flex:1;
+.ProjectsLeft {
+  flex: 1;
   text-align: center;
   max-width: 50vw;
   margin-right: 10px;
-  
 }
-.ProjectsRight
-{
-  flex:1;
+.ProjectsRight {
+  flex: 1;
   text-align: center;
   max-width: 50vw;
   margin-left: 10px;
 }
-#carwash
-{
- max-width: 600px;
-}
-#mvcflashcards
-{
+#carwash {
   max-width: 600px;
 }
-@media(max-width:1200px)
-{
-  #carwash {max-width: 175px;}
+#mvcflashcards {
+  max-width: 600px;
 }
-@media(max-width:1200px)
-{
-  #mvcflashcards {max-width: 175px;}
+@media (max-width: 1200px) {
+  #carwash {
+    max-width: 175px;
+  }
+}
+@media (max-width: 1200px) {
+  #mvcflashcards {
+    max-width: 175px;
+  }
 }
 
-@media (max-width: 800px) 
-{
- html{ font-size: 15px;}
+@media (max-width: 800px) {
+  html {
+    font-size: 15px;
+  }
 }
 
-@media (max-width:800px) 
-{
- .resume
- {
-  border: 7px solid white;
-  position: relative;
-  text-align: center;
-  font-size: large;
-  margin: auto;
-  margin-bottom: 11px;
- 
+@media (max-width: 800px) {
+  .resume {
+    border: 7px solid white;
+    position: relative;
+    text-align: center;
+    font-size: large;
+    margin: auto;
+    margin-bottom: 11px;
+  }
+}
+@media (max-width: 800px) {
+  .Certificate {
+    border: 7px solid white;
+    position: relative;
+    text-align: center;
+    font-size: large;
 
-} 
+    margin: auto;
+    margin-bottom: 50px;
+  }
 }
-@media (max-width:800px) 
-{
- .Certificate
- {
-  border: 7px solid white;
-  position: relative;
-  text-align: center;
-  font-size: large;
-  
-  margin: auto;
-  margin-bottom: 50px;
-  
-} 
-}
-@media (max-width:800px)
-{
-  .iframe
-  {
+@media (max-width: 800px) {
+  .iframe {
     height: auto;
-    width:auto;
+    width: auto;
     resize: both;
   }
 }
-@keyframes zoom 
-{
-  from {transform: scale(-1)}
-  to {transform: scale(1)}
-  
+@keyframes zoom {
+  from {
+    transform: scale(-1);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+@media (max-width: 800px) {
+  .popup-content {
+    width: 80%; /* Set a percentage-based width for smaller screens */
+  }
+
+  textarea {
+    height: 100px; /* Adjust the height for smaller screens */
+  }
 }
 
-.Title
-{
- color-scheme: black;
+/* Media query for even smaller screens, like mobile devices */
+@media (max-width: 600px) {
+  .popup-content {
+    width: 90%; /* Adjust the width for even smaller screens */
+  }
+
+  textarea {
+    height: 80px; /* Adjust the height for even smaller screens */
+  }
+}
+
+/* Additional styles for smaller screens, if needed */
+/* For example, you might want to adjust the font size or padding */
+@media (max-width: 800px) {
+  .popup-content {
+    font-size: 14px;
+    padding: 15px;
+  }
+}
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column; /* Display the links vertically on smaller screens */
+    align-items: center; /* Center the links on smaller screens */
+  }
+
+  .navbar a {
+    margin-top: 5px; /* Add some spacing between the links on smaller screens */
+  }
+
+  .navbar .contact-button {
+    display: block; /* Show the contact button on smaller screens */
+    margin-top: 10px; /* Add some spacing between the contact button and the links */
+  }
+}
+.Title {
+  color-scheme: black;
 }
 a:link {
   color: rgb(250, 253, 251);
@@ -225,4 +322,3 @@ a:active {
   background-color: transparent;
   text-decoration: underline;
 }
-
