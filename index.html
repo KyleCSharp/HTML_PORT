@@ -29,15 +29,18 @@
       <span class="close-button" id="closeButton">&times;</span>
       <h2>Contact Form</h2>
       <!-- Your contact form elements go here -->
-      <form action="https://formsubmit.co/kylesofteng@gmail.com" method="POST">
+      <form id="myForm" action="https://formsubmit.co/kylesofteng@gmail.com" method="POST">
         <input type="email" name="email" placeholder="Email Address" required>
-                <input type="text" name="name"placeholder="Name" required>
-                <input type="text" name="number" placeholder="Number"required>
-                <textarea name="message" placeholder="Write message here" required></textarea>
-                <input type="hidden" name="_autoresponse" value="Thank you for reaching out to me, I will get back with you ASAP. ">
-                <input type="hidden" name="_next" value="https://kylecsharp.github.io/HTML_PORT/pages/Thankyou.html" >
-                <button type="submit">Send</button>
-   </form>
+        <input type="text" name="name" placeholder="Name" required>
+        <input type="text" name="number" placeholder="Number" required>
+        <textarea name="message" placeholder="Write message here" required></textarea>
+        <input type="hidden" name="_autoresponse" value="Thank you for reaching out to me, I will get back with you ASAP.">
+        <input type="hidden" name="_next" value="https://kylecsharp.github.io/HTML_PORT/pages/Thankyou.html">
+        <button type="button" id="submitBtn" onclick="submitForm()">Send</button>
+    </form>
+    
+    <div class="spinner" id="spinner"></div>
+    
     </div>
   </div>
   <div class = Title> 

@@ -349,3 +349,28 @@ a:active {
 .back-home-button:hover {
   background-color: #555;
 }
+.spinner {
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-left-color: rgb(252, 10, 252);
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  animation: spin 1s linear infinite;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  display: none; /* Initially hide the spinner */
+  background-color: #333;
+  color: #fff; /* Color for the spinner icon (if applicable) */
+}
+
+@keyframes spin {
+  from {
+      transform: rotate(0deg);
+  }
+  to {
+      transform: rotate(360deg);
+  }
+}
