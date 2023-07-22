@@ -23,3 +23,12 @@
     // Submit the form programmatically
     document.getElementById('myForm').submit();
 }
+document.addEventListener("visibilitychange", function() {
+  if (document.visibilityState === "hidden") {
+    // Change the title to the custom message
+    document.title = "Wait, don't leave!";
+  } else {
+    // When the user returns to the page, restore the original title
+    document.title = "Kyle Rigler";
+  }
+});
