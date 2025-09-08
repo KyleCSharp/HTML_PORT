@@ -1,171 +1,320 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="icon" href="favicon\ught-iron-house-letter-k-LET-K-2_1aad4e62-be85-4fe6-ad3b-7c9e298e6ac8_580x.ico" type="image/x-icon">
-  
-  
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Kyle Rigler</title>
-    <script src="JS/script.js"></script>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kyle Rigler — Construction Technologist · BIM Modeler · Software Dev</title>
+
+  <!-- Favicon (fixed path slashes) -->
+  <link rel="icon" type="image/x-icon" href="favicon/ught-iron-house-letter-k-LET-K-2_1aad4e62-be85-4fe6-ad3b-7c9e298e6ac8_580x.ico" />
+
+  <!-- Meta -->
+  <meta name="description" content="Kyle Rigler — Construction Technologist & BIM Modeler at CarolinaPower. Portfolio of BIM/VDC projects and software apps with demo videos." />
+  <meta property="og:title" content="Kyle Rigler — Portfolio" />
+  <meta property="og:description" content="Construction Technology (CarolinaPower) + Software Development. BIM/VDC work, apps, and YouTube demos." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://kylerigler.com/" />
+  <meta name="theme-color" content="#0f172a" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet" />
+
+  <style>
+    :root{
+      --bg:#0b1020; --panel:#111833; --ink:#e8ecff; --muted:#a8b3d9; --accent:#66e2ff; --border:#23305b;
+      --chip:#1a2347; --chip-b:#263166;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
+    a{color:var(--accent);text-decoration:none}
+    a:hover{text-decoration:underline}
+
+    /* Top bar */
+    .navbar{
+      position:sticky; top:0; z-index:50;
+      display:flex; align-items:center; gap:14px; justify-content:center; flex-wrap:wrap;
+      padding:10px 14px; background:rgba(11,16,32,.8); backdrop-filter:blur(8px);
+      border-bottom:1px solid var(--border);
+    }
+    .navbar a{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border:1px solid var(--border);border-radius:10px;background:linear-gradient(180deg,var(--chip),var(--chip-b))}
+    .navbar img{height:18px;width:auto;display:block}
+
+    .wrap{max-width:1120px;margin:auto;padding:20px}
+
+    /* Hero with background video */
+    #myVideo{
+      position:fixed; inset:0; width:100%; height:100%; object-fit:cover; z-index:-2; filter:brightness(.35) saturate(1.05);
+    }
+    .hero{
+      margin-top:16px; padding:28px; border:1px solid var(--border); border-radius:18px;
+      background:linear-gradient(180deg,#0c142db3,#101938cc);
+    }
+    .title{font-size:34px; margin:8px 0}
+    .subtitle{color:var(--muted); margin:0}
+    .id-line{display:flex;align-items:center;gap:14px;margin-top:16px;flex-wrap:wrap}
+    .avatar{width:82px;height:82px;border-radius:50%;object-fit:cover;border:2px solid var(--border)}
+    .pill{padding:6px 12px;border-radius:999px;border:1px solid var(--border);background:linear-gradient(180deg,var(--chip),var(--chip-b));color:var(--ink);font-weight:600}
+
+    /* Sections */
+    section{margin:40px 0}
+    .panel{border:1px solid var(--border);border-radius:16px;background:linear-gradient(180deg,#0f1837,#0e1531);padding:20px}
+    h1,h2{margin:0 0 14px}
+    h1{font-size:28px}
+    h2{font-size:22px}
+    .muted{color:var(--muted)}
+    .chips{display:flex;flex-wrap:wrap;gap:10px}
+    .chip{padding:6px 12px;border-radius:999px;border:1px solid var(--border);background:linear-gradient(180deg,var(--chip),var(--chip-b))}
+    .grid{display:grid;gap:18px}
+    .grid.cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .grid.cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+    @media(max-width:980px){.grid.cols-3{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    @media(max-width:680px){.grid.cols-2,.grid.cols-3{grid-template-columns:1fr}}
+    .card{padding:16px;border:1px solid var(--border);border-radius:14px;background:#101838}
+    .card h3{margin:0 0 6px;font-size:18px}
+    .card p{margin:0 0 10px;color:var(--muted)}
+    .row{display:flex;gap:10px;flex-wrap:wrap}
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 12px;border-radius:10px;border:1px solid var(--border);
+         background:linear-gradient(180deg,#1b2550,#16214a);font-weight:600;color:var(--ink)}
+    .btn.primary{background:linear-gradient(180deg,#12b4d3,#0aa7c6);color:#001018;border-color:#0891a3}
+    .media{position:relative;aspect-ratio:16/9;border-radius:12px;overflow:hidden;border:1px solid var(--border);background:#0b1020}
+    iframe{width:100%;height:100%;border:0}
+
+    /* Popup */
+    .popup-overlay{
+      position:fixed; inset:0; background:rgba(0,0,0,.6); display:none; align-items:center; justify-content:center; z-index:100;
+    }
+    .popup-content{
+      width:min(640px,92vw); background:linear-gradient(180deg,#0f1837,#0e1531); border:1px solid var(--border);
+      border-radius:16px; padding:18px; position:relative;
+    }
+    .close-button{position:absolute;right:12px;top:6px;font-size:28px;cursor:pointer}
+    form{display:grid;gap:12px}
+    input,textarea{padding:12px 14px;border-radius:10px;border:1px solid var(--border);background:#0b1330;color:var(--ink)}
+    .spinner{display:none;width:28px;height:28px;border-radius:50%;border:3px solid #2a3a7a;border-top-color:#66e2ff;margin-top:8px;animation:spin 1s linear infinite}
+    @keyframes spin{to{transform:rotate(360deg)}}
+
+    .footer{margin:50px 0 20px;color:var(--muted);text-align:center}
+  </style>
 </head>
 <body>
- 
-  <div class="navbar">
+  <!-- Background video (fixed path slashes) -->
+  <video autoplay muted loop id="myVideo" playsinline>
+    <source src="./video/med vid.mp4" type="video/mp4" />
+  </video>
+
+  <!-- NAV -->
+  <div class="navbar" role="navigation" aria-label="Main">
     <a href="#projects">Projects</a>
-    <a href="#" class="contact-button">Contact Me</a>
-    <a href="https://www.linkedin.com/in/kyle-rigler-57b410238/"target="_blank"rel="noopener noreferrer"><img src="Images\linkedin.png" ></a>
-    <a href="https://www.codewars.com/users/KyleSharp"target="_blank"rel="noopener noreferrer"><img src="Images\codewars_logo_icon_145389.png" ></a>
-    <a href="https://github.com/KyleCSharp"target="_blank"rel="noopener noreferrer"><img src="Images\png-transparent-github-social-media-computer-icons-logo-android-github-logo-computer-wallpaper-banner-thumbnail-removebg-preview.png"></a>
-    <a href="mailto:kylesofteng@gmail.com"><img src="Images\png-email-removebg-preview.png" ></a>
-    <a href="tel:3023451052" class="phone-number"><img src="Images\phone.png" ></a>
+    <a href="#" class="contact-button" id="openContact">Contact Me</a>
+    <a href="https://www.linkedin.com/in/kyle-rigler-57b410238/" target="_blank" rel="noopener noreferrer">
+      <img src="Images/linkedin.png" alt="LinkedIn" />
+    </a>
+    <a href="https://www.codewars.com/users/KyleSharp" target="_blank" rel="noopener noreferrer">
+      <img src="Images/codewars_logo_icon_145389.png" alt="Codewars" />
+    </a>
+    <a href="https://github.com/KyleCSharp" target="_blank" rel="noopener noreferrer">
+      <img src="Images/png-transparent-github-social-media-computer-icons-logo-android-github-logo-computer-wallpaper-banner-thumbnail-removebg-preview.png" alt="GitHub" />
+    </a>
+    <a href="mailto:kylesofteng@gmail.com" aria-label="Email Kyle">
+      <img src="Images/png-email-removebg-preview.png" alt="Email" />
+    </a>
+    <a href="tel:3023451052" class="phone-number" aria-label="Call Kyle">
+      <img src="Images/phone.png" alt="Phone" />
+    </a>
   </div>
 
-  <!-- Popup Overlay and Content -->
-  <div class="popup-overlay" id="popupOverlay">
-    <div class="popup-content">
-      <span class="close-button" id="closeButton">&times;</span>
-      <h2>Contact Form</h2>
-      <!-- Your contact form elements go here -->
+  <!-- CONTACT POPUP -->
+  <div class="popup-overlay" id="popupOverlay" aria-hidden="true">
+    <div class="popup-content" role="dialog" aria-modal="true" aria-labelledby="contactTitle">
+      <span class="close-button" id="closeButton" aria-label="Close contact form">&times;</span>
+      <h2 id="contactTitle">Contact Form</h2>
+
       <form id="myForm" action="https://formsubmit.co/kylesofteng@gmail.com" method="POST">
-        <input type="email" name="email" placeholder="Email Address" required>
-        <input type="text" name="name" placeholder="Name" required>
-        <input type="text" name="number" placeholder="Number" required>
-        <textarea name="message" placeholder="Write message here" required></textarea>
+        <input type="email" name="email" placeholder="Email Address" required />
+        <input type="text" name="name" placeholder="Name" required />
+        <input type="text" name="number" placeholder="Number" required />
+        <textarea name="message" placeholder="Write message here" rows="5" required></textarea>
+
+        <!-- FormSubmit config (kept from your original) -->
         <input type="hidden" name="_autoresponse" value="Thank you for reaching out to me, I will get back with you ASAP.">
         <input type="hidden" name="_next" value="https://kylerigler.com/pages/Thankyou.html">
         <input type="hidden" name="_captcha" value="false">
-        <button type="button" id="submitBtn" onclick="submitForm()">Send</button>
-    </form>
-    
-    <div class="spinner" id="spinner"></div>
-    
+
+        <button type="submit" id="submitBtn" class="btn primary">Send</button>
+        <div class="spinner" id="spinner" aria-hidden="true"></div>
+      </form>
     </div>
   </div>
-  <div class = Title> 
-    <h1>Kyle Rigler</h1>
-  </div>
-    <video autoplay muted loop id="myVideo">
-        <source src=".\video\med vid.mp4" type="video/mp4">
-      </video>
-    <section>
-    <img src=".\Images\IMG_0119 (2).jpg"alt="KyleRigler" id =KyleRigler>
 
-    <p>Full stack software engineer & Computer builder</p> 
-   
-    
+  <div class="wrap">
+    <!-- HERO -->
+    <section class="hero">
+      <h1 class="title">Kyle Rigler</h1>
+      <p class="subtitle">Construction Technologist & BIM Modeler @ <strong>CarolinaPower</strong> · Full-stack Software Developer</p>
+      <div class="id-line">
+        <!-- Headshot (fixed path slashes & valid id) -->
+        <img class="avatar" src="./Images/IMG_0119 (2).jpg" alt="Kyle Rigler headshot" />
+        <span class="pill">Greenville, SC</span>
+        <a class="btn" href="#projects">See Projects</a>
+        <a class="btn" href="https://docs.google.com/document/d/1SbY5K8QxEKCK9YVSXjj4UpoHSzYOrcbMwwoTjl4sXeU/edit?usp=sharing" target="_blank" rel="noopener noreferrer">View Resume</a>
+        <a class="btn" href="https://app.digit.ink/view-credential/f12ebdbc-7462-407e-be35-fbc29b90730d?di_ref=a2li" target="_blank" rel="noopener noreferrer">Certificate</a>
+      </div>
     </section>
-    <section class="aboutme">
-        <h1>ABOUT ME</h1>
-        <p id = "aboutMe">With a start in the electrical field, I discovered my true calling in the realm of technology. Growing up, I had a natural affinity for computers, which led me to build and tinker with them. Seeking to turn my passion into a career, I enrolled in True Coders to become a C# programmer. Today, I am proud to have gained expertise in designing, developing, analyzing, and implementing client-server, web, and desktop applications using C#. My attention to detail and drive for success have made me a dependable and professional programmer. Additionally, I have experience in computer building and windows and OS installations. I am dedicated to continuously expanding my skills and knowledge in the ever-evolving technology industry.
-        </p>
-        
-        
-      </section>
-    
-    <section><h1>EDUCATION</h1><h3>TRUE CODERS</h3><h4>August 2022 -  Dec 2022</h4>
-       <p id = "school">Birmingham. Alabama Project-based training in programming languages and other technical skills, such as SQL, C#, .NET Core, Java, Git, ASP.NET MVC, HTML, CSS, and JavaScript. These skills were developed by building multiple C# and SQL projects in Visual Studio and Visual Studio Code C# and SQL Projects were tracked in Git and GitHub for source control Managed SQL databases using the CRUD operations in MySQL</p>
-       <a href="https://app.digit.ink/view-credential/f12ebdbc-7462-407e-be35-fbc29b90730d?di_ref=a2li"target="_blank"rel="noopener noreferrer">My Certificate</a>
-       </section>
-       
-        <div class = "resume">
-          MY RESUME
-          <a href="https://docs.google.com/document/d/1SbY5K8QxEKCK9YVSXjj4UpoHSzYOrcbMwwoTjl4sXeU/edit?usp=sharing"target="_blank"rel="noopener noreferrer">click for resume</a>
-          
-        </div>
-        <div class = "Certificate">
-          View my Certificate
-           <a href="https://app.digit.ink/view-credential/f12ebdbc-7462-407e-be35-fbc29b90730d?di_ref=a2li"target="_blank"rel="noopener noreferrer">Click for Certificate</a>
+
+    <!-- ABOUT -->
+    <section class="panel">
+      <h2>ABOUT ME</h2>
+      <p class="muted" id="aboutMe">
+        With a start in the electrical field, I moved into tech—building and fixing PCs, then training at TrueCoders to become a C# developer.
+        Today I design, develop, and ship client-server, web, and desktop apps (C#, .NET, MVC, SQL, HTML/CSS/JS) while owning VDC/BIM workflows:
+        Revit-first coordination, prefab clarity, and Trimble-ready deliverables the field can trust.
+      </p>
+      <div class="chips" aria-label="Tech stack">
+        <span class="chip">Revit 2023–2025</span><span class="chip">Navisworks</span><span class="chip">Trimble</span>
+        <span class="chip">C# / .NET</span><span class="chip">ASP.NET MVC</span><span class="chip">SQL Server / MySQL</span>
+        <span class="chip">HTML/CSS/JS</span><span class="chip">Next.js</span>
+      </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section class="panel">
+      <h2>EDUCATION — TRUE CODERS</h2>
+      <p class="muted">August 2022 – Dec 2022 · Birmingham, AL. Project-based training in SQL, C#, .NET Core, Java, Git, ASP.NET MVC, HTML, CSS, and JavaScript. Built multiple C# and SQL projects tracked in Git/GitHub. Managed SQL DBs using CRUD ops in MySQL.</p>
+      <a class="btn" href="https://app.digit.ink/view-credential/f12ebdbc-7462-407e-be35-fbc29b90730d?di_ref=a2li" target="_blank" rel="noopener noreferrer">My Certificate</a>
+    </section>
+
+    <!-- PROJECTS -->
+    <div id="projects"></div>
+    <section class="panel">
+      <h1>PROJECTS</h1>
+      <div class="grid cols-2">
+        <!-- Left column projects -->
+        <div class="card">
+          <h3>Freelance website — Crazy Q</h3>
+          <p class="muted">HTML, CSS, JS — responsive site with interactive elements.</p>
+          <p>Check it out: <a href="https://www.crazy-q.com/" target="_blank" rel="noopener noreferrer">www.crazy-q.com</a></p>
+          <div class="media">
+            <iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/l3IxwmtVyDA" title="crazy-q video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
           </div>
-
-        
-          <div id="projects"><h1>PROJECTS</h1></div>
-                                                        
-          <div class="projects">
-            <div class="ProjectsLeft">
-              <h4>Freelance website Crazy Q</h4>
-              <h5>HTML,CSS, and JavaScript</h5>
-                    <p>I'm thrilled to share that I've created a stunning website from scratch using HTML, CSS, and JS! 🎉 Check it out here:<a href="https://www.crazy-q.com/"target="_blank"rel="noopener noreferrer">www.crazy-q.com</a> 🌟 Key Features 🌟
-                      1️⃣ User-friendly Interface: I meticulously designed the website to ensure a seamless and intuitive experience for users of all backgrounds.
-                      2️⃣ Interactive Elements: Through the power of JS, I incorporated dynamic elements to create a captivating environment that keeps visitors hooked.
-                      3️⃣ Responsive Design: The website is optimized for various devices, providing a consistent and visually appealing experience on desktop, tablet, and mobile.</p>
-                    <div class = "iframe"> <iframe width="100%" height="100%" src="https://www.youtube.com/embed/l3IxwmtVyDA" title="crazy-q video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
-
-
-
-              <h4>Console api call application</h4>
-              <p>A console app I created in class for fun using Apis for weather and Kanye West quotes. With Typewriter effects. When asked for quotes or weather type in either or, and go through the program.</p> 
-              <a href="https://github.com/KyleCSharp/APIs-and-JSON-Exercise/releases/download/2.1.1/API_PRO2.1.1.exe">API console App download</a> & <a href="https://github.com/KyleCSharp/APIs-and-JSON-Exercise"target="_blank"rel="noopener noreferrer">Code On GitHub</a>
-              <div class = "iframe"><iframe width="100%" height="100%" src="https://www.youtube.com/embed/AzPIYugkt-4" title="API CALL AND WEATHER" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
-
-
-
-          
-              <h4>Windows_Form_Calculator</h4>
-              <h5>c#, windows forms, visual studio </h5>
-              <p> a basic windows form calculator. using visual studio with c# language. code is written behind each button. every time you hit a button it then hits a method I created and then runs the method.</p> 
-              <a href="https://github.com/KyleCSharp/Windows_Form_Calculator/releases/download/V1.0.3-alpha/New_Win_Form_Calc.exe">Basic calculator download</a> & <a href="https://github.com/KyleCSharp/Windows_Form_Calculator"target="_blank"rel="noopener noreferrer">Code On GitHub</a>
-                <div class = "iframe"><iframe width="100%" height="100%" src="https://www.youtube.com/embed/Hd4mqGQM2uU" title="Kyle&#39;s Calculator" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
-
-
-
-              
-              <h4>Employee_tracker</h4>
-              <p>This is an ASP.NET project I started to get myself familiar with asp.net is currently a work in progress the purpose of the program is for CRUD operations on a database to keep track of your employees, crud operations are in full effect. currently working on styling and then as well a search bar.</p>
-              <a href="https://github.com/KyleCSharp/employee_tracker"target="_blank"rel="noopener noreferrer">Code On GitHub</a>
-            <div class ="iframe"><iframe width="100%" height="100%" src="https://www.youtube.com/embed/SF49tFw3224" title="Employee_Tracker.NET" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
-            <h4>TIME_VIEWER</h4>
-                <p>Time zone view project I made with win forms c#. The purpose of this program is to get system time and then give you Time zone that you need in the US
-                </p>
-                <a href="https://github.com/KyleCSharp/TIME_CONVERTER"target="_blank"rel="noopener noreferrer">Source Code  </a> & <a href="https://github.com/KyleCSharp/TIME_CONVERTER/releases/download/V1.0-beta/TIME_CONVERTER.exe">downloadable for windows</a> 
-                <div class = "iframe"><iframe width="100%" height="100%" src="https://www.youtube.com/embed/vc0pNGID5os" title="Time View" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
-          </div>
-
-        <div class="ProjectsRight">
-            <div class = "project1">
-              <h4>High End Moving Website</h4>
-              <h5>HTML,CSS, and JavaScript</h5>
-              <p>
-                In this project, I utilized HTML, CSS, and JavaScript to create a visually captivating website. Using CSS and JavaScript, I implemented fade effects to enhance the user experience. Additionally, I incorporated JavaScript to enable full-screen functionality for the images. The result is a sleek and immersive browsing experience.</p>
-              <div><a href="https://github.com/KyleCSharp/HighEndMoving"target="_blank"rel="noopener noreferrer">Code on github</a></div>
-              <div><a href="https://www.highend-moving.com/"target="_blank"rel="noopener noreferrer">Deployed!</a></div>
-              <div class = "iframe"><iframe width="100%" height="100%" src="https://www.youtube.com/embed/dHgVeXo-bJk" title="highendmoving" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
-              
-              <h4>PublicFavBeer</h4>
-              <h5>ASP.NET MVC framework C# SQL Server database Installation</h5>
-              <p>This is a web application built using the ASP.NET MVC framework that allows users to add and rate their favorite beers. Users can input details about their favorite beers, including the name, type, brewery, and other relevant information.</p>
-              <div><a href="https://github.com/KyleCSharp/PublicFavBeers"target="_blank"rel="noopener noreferrer">Code on github</a></div>
-              <div><a href="https://publicfavbeer.azurewebsites.net/"target="_blank"rel="noopener noreferrer">Deployed!</a></div>
-              <div class = "iframe"><iframe width="100%" height="100% " src="https://www.youtube.com/embed/qBMHKi2JM2Q" title="PublicFavBeer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
-              <h4>True Coders Flashcards MVC Project2.0</h4>
-            <p>True Coders Flashcards MVC Project2.0
-              This project is a simple flashcards web application designed to help users learn and memorize important concepts in C#, CSS, HTML, and SQL. The project is built using the Model-View-Controller (MVC) architectural pattern and utilizes various technologies to provide an interactive user interface.
-              </p>
-              <a href="https://github.com/KyleCSharp/TrueCodersFlashCards2.0#true-coders-flashcards-mvc-project20"target="_blank"rel="noopener noreferrer"><div>Code on GitHub</div></a>
-              <a href="https://truecodersflashcards.azurewebsites.net" target="_blank"rel="noopener noreferrer" >Deployed!</a>
-              <div class = "iframe"><iframe width="100%" height="100%" src="https://www.youtube.com/embed/oZgKelmqar8" title="TrueCodersflashCards2.0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
-              <h4>Winforms_PasswordGen</h4>
-                <h5>c#, windows forms, visual studio </h5>
-                <p> windows form password generator. using visual studio with c# language. code is written behind each button. every time you hit a button it then hits a method I created and then runs the method. the task at hand is to create a secure random password that no one will know. You can download this application with the link provided. First type in the number of characters then hit the ”click me” button and out will pop the random password, copy and paste where ever needed. 
-                </p> 
-                <a href="https://github.com/KyleCSharp/New_Winforms_PasswordGen/releases/download/v1.0.3-alpha/WinForms_Password_Gen.exe">WinForms_Password_Gen download</a> & <a href="https://github.com/KyleCSharp/New_Winforms_PasswordGen"target="_blank"rel="noopener noreferrer">Code On GitHub</a>
-                <div class = "iframe"><iframe width="100%" height="100%" src="https://www.youtube.com/embed/hyv_G-wFKdI" title="password generator" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
-          
-            
-            <h4>TacoBell Project</h4>
-              <h5>C#, A project in geolocation, CSV parsing, and logging, visual studio </h5>
-                  <p> The task is to find the furthest TacoBells from one another in the Alabama area and other surrounding states. I then converted meters to miles at the end. 
-                  </p> 
-                      <a href="https://github.com/KyleCSharp/TacoParser"target="_blank"rel="noopener noreferrer">TacoBell code GitHub</a>
-              
-                
-                      
-                      
-            </div>
         </div>
-        
-  </body>
+
+        <div class="card">
+          <h3>Console API Call Application</h3>
+          <p class="muted">Weather + Kanye quotes, with typewriter effects. Choose “weather” or “quotes.”</p>
+          <p><a href="https://github.com/KyleCSharp/APIs-and-JSON-Exercise/releases/download/2.1.1/API_PRO2.1.1.exe">Download</a> · <a href="https://github.com/KyleCSharp/APIs-and-JSON-Exercise" target="_blank" rel="noopener noreferrer">Code on GitHub</a></p>
+          <div class="media">
+            <iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/AzPIYugkt-4" title="API CALL AND WEATHER" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Windows Form Calculator</h3>
+          <p class="muted">C#, WinForms. Every button routes to a method; simple, clean calculator.</p>
+          <p><a href="https://github.com/KyleCSharp/Windows_Form_Calculator/releases/download/V1.0.3-alpha/New_Win_Form_Calc.exe">Download</a> · <a href="https://github.com/KyleCSharp/Windows_Form_Calculator" target="_blank" rel="noopener noreferrer">Code on GitHub</a></p>
+          <div class="media">
+            <iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/Hd4mqGQM2uU" title="Kyle's Calculator" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Employee Tracker (ASP.NET)</h3>
+          <p class="muted">CRUD employee tracker; focusing on styling + search next.</p>
+          <p><a href="https://github.com/KyleCSharp/employee_tracker" target="_blank" rel="noopener noreferrer">Code on GitHub</a></p>
+          <div class="media">
+            <iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/SF49tFw3224" title="Employee_Tracker.NET" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>TIME_VIEWER</h3>
+          <p class="muted">WinForms C#. Shows US time zones based on system time.</p>
+          <p><a href="https://github.com/KyleCSharp/TIME_CONVERTER" target="_blank" rel="noopener noreferrer">Source Code</a> · <a href="https://github.com/KyleCSharp/TIME_CONVERTER/releases/download/V1.0-beta/TIME_CONVERTER.exe">Download</a></p>
+          <div class="media">
+            <iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/vc0pNGID5os" title="Time View" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          </div>
+        </div>
+
+        <!-- Right column projects from your HTML -->
+        <div class="card">
+          <h3>High End Moving Website</h3>
+          <p class="muted">HTML, CSS, JS with fades, fullscreen gallery, and responsive layout.</p>
+          <p><a href="https://github.com/KyleCSharp/HighEndMoving" target="_blank" rel="noopener noreferrer">Code on GitHub</a> · <a href="https://www.highend-moving.com/" target="_blank" rel="noopener noreferrer">Deployed!</a></p>
+          <div class="media">
+            <iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/dHgVeXo-bJk" title="highendmoving" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>PublicFavBeer — ASP.NET MVC</h3>
+          <p class="muted">Users add and rate beers. SQL Server backend.</p>
+          <p><a href="https://github.com/KyleCSharp/PublicFavBeers" target="_blank" rel="noopener noreferrer">Code on GitHub</a> · <a href="https://publicfavbeer.azurewebsites.net/" target="_blank" rel="noopener noreferrer">Deployed!</a></p>
+          <div class="media">
+            <iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/qBMHKi2JM2Q" title="PublicFavBeer" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>True Coders Flashcards MVC 2.0</h3>
+          <p class="muted">Study C#, CSS, HTML, SQL via MVC app.</p>
+          <p><a href="https://github.com/KyleCSharp/TrueCodersFlashCards2.0#true-coders-flashcards-mvc-project20" target="_blank" rel="noopener noreferrer">Code on GitHub</a> · <a href="https://truecodersflashcards.azurewebsites.net" target="_blank" rel="noopener noreferrer">Deployed!</a></p>
+          <div class="media">
+            <iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/oZgKelmqar8" title="TrueCodersflashCards2.0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>WinForms Password Generator</h3>
+          <p class="muted">C#, WinForms. Generate secure random passwords.</p>
+          <p><a href="https://github.com/KyleCSharp/New_Winforms_PasswordGen/releases/download/v1.0.3-alpha/WinForms_Password_Gen.exe">Download</a> · <a href="https://github.com/KyleCSharp/New_Winforms_PasswordGen" target="_blank" rel="noopener noreferrer">Code on GitHub</a></p>
+          <div class="media">
+            <iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/hyv_G-wFKdI" title="password generator" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>TacoBell Project</h3>
+          <p class="muted">C#, geolocation, CSV parsing, logging — find the furthest Taco Bells.</p>
+          <p><a href="https://github.com/KyleCSharp/TacoParser" target="_blank" rel="noopener noreferrer">TacoBell code GitHub</a></p>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      © <span id="y"></span> Kyle Rigler · CarolinaPower
+    </footer>
+  </div>
+
+  <script>
+    // Year
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    // Contact popup logic (no external JS needed)
+    const overlay = document.getElementById('popupOverlay');
+    const openBtn = document.getElementById('openContact');
+    const closeBtn = document.getElementById('closeButton');
+    const form = document.getElementById('myForm');
+    const spinner = document.getElementById('spinner');
+    const submitBtn = document.getElementById('submitBtn');
+
+    function openModal(){
+      overlay.style.display = 'flex';
+      overlay.setAttribute('aria-hidden','false');
+    }
+    function closeModal(){
+      overlay.style.display = 'none';
+      overlay.setAttribute('aria-hidden','true');
+    }
+    if(openBtn) openBtn.addEventListener('click', e => { e.preventDefault(); openModal(); });
+    if(closeBtn) closeBtn.addEventListener('click', closeModal);
+    overlay?.addEventListener('click', (e)=>{ if(e.target === overlay) closeModal(); });
+
+    // Show spinner on submit; let FormSubmit handle redirect
+    if(form){
+      form.addEventListener('submit', () => {
+        spinner.style.display = 'inline-block';
+        spinner.setAttribute('aria-hidden','false');
+        if(submitBtn){ submitBtn.disabled = true; submitBtn.textContent = 'Sending…'; }
+      });
+    }
+  </script>
+</body>
 </html>
-
