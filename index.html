@@ -137,6 +137,9 @@
       position:relative;
       overflow:hidden;
       font-weight:500;
+      /* Override gradient text for navbar */
+      -webkit-text-fill-color:var(--ink);
+      color:var(--ink);
     }
     .navbar a::before{
       content:'';
@@ -328,6 +331,8 @@
       transition:all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
       position:relative;
       overflow:hidden;
+      /* Ensure text is visible */
+      -webkit-text-fill-color:var(--ink);
     }
     .pill::before{
       content:'';
@@ -543,6 +548,8 @@
       overflow:hidden;
       cursor:pointer;
       font-size:15px;
+      /* Override gradient text for buttons */
+      -webkit-text-fill-color:var(--ink);
     }
     .btn::before{
       content:'';
@@ -577,6 +584,8 @@
       border:none;
       box-shadow:var(--shadow-md);
       font-weight:700;
+      /* Ensure dark text is visible on gradient background */
+      -webkit-text-fill-color:var(--bg);
     }
     .btn.primary::before{
       background:linear-gradient(135deg, rgba(255,255,255,0.2), rgba(255,255,255,0.1));
